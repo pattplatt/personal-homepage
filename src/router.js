@@ -15,7 +15,7 @@ const routes = [
     name: 'Projects',
     component: ProjectsList,
   },
-  {ß
+  {
     path: '/skills-hobbies',
     name: 'SkillsHobbies',
     component: SkillsHobbies,
