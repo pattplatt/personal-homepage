@@ -10,16 +10,17 @@
 /* ---------------------- */
 /* 1) Root & Resets       */
 /* ---------------------- */
+@import "tailwindcss";
 
 :root {
-    /* Theme Colors */
-    --primary-color: #ffffff;
-    --secondary-color: #602773;
-    --accent-color: #e5e5e5;
-    --bg-color: #ffffff;
-    --text-color: #ffffff;
-    --heading-color: #ffffff;
-  
+  --primary-color: #2E2E2E;
+  --secondary-color: #4F4F4F;
+  --accent-color: #007ACC;
+  --bg-color: #FAFAFA;
+  --text-color: #1A1A1A;
+  --heading-color: #000000;
+
+
     /* Typography */
     --font-family: "Open Sans", sans-serif;
     --font-size-base: 16px;
@@ -30,8 +31,6 @@
   }
   
   * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
   }
   
@@ -41,14 +40,13 @@
   }
   
   body {
-    font-family: var(--font-family);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: var(--line-height);
     min-height: 100vh;
     position: relative;
-    background-color: red;
-    background: linear-gradient(to bottom, red, purple, black);
+    /*background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(141, 141, 141)); */
   }
   
   /* Responsive typography scaling */
@@ -82,7 +80,13 @@
   h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.75rem;
     font-weight: 600;
-    color: var(--heading-color);
+
+  }
+
+   h2 {
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    color: var(--accent-color);
   }
   
   p {
@@ -120,7 +124,7 @@
   header {
     background-color: transparent;
     padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(228, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   header nav ul {
@@ -135,7 +139,7 @@
   }
   
   header nav a {
-    color: #ffffff;
+    color: #000000;
     transition: color 0.3s ease, border-bottom 0.3s ease;
     padding-bottom: 3px;
     border-bottom: 2px solid transparent;
@@ -152,7 +156,7 @@
   
   footer {
     background-color: transparent;
-    color: #ffffff;
+    color: #000000;
     text-align: center;
     padding: 1rem 0;
     position: absolute;
@@ -171,39 +175,7 @@
   .home-intro {
     text-align: center;
     margin-top: 4rem;
-  }
-  
-  .home-intro .profile-pic {
-    width: 300px;
-    border-radius: 0%;
-    /* Remove any solid border if you want the edges to fade out entirely */
-    border: none;
-    transition: transform 0.3s;
-  
-    /*
-      Create a circular mask that’s opaque in the center (black)
-      and fades to transparent at the edges.
-    */
-    -webkit-mask-image: radial-gradient(
-        ellipse,
-      black 20%,
-      transparent 70%
-    );
-    mask-image: radial-gradient(
-        ellipse,
-      black 20%,
-      transparent 70%
-    );
-    mask-size: cover;
-    mask-position: center;
-    
-    /* For older Safari support: */
-    -webkit-mask-size: cover;
-    -webkit-mask-position: center;
-  }
-  
-  .home-intro .profile-pic:hover {
-    transform: scale(1.05) rotate(5deg);
+    align-items: center; 
   }
   
   .home-intro h1 {
@@ -225,12 +197,7 @@
   
   .projects {
     /* background-color: var(--accent-color); */
-    padding: 10rem 0; 
-  }
-  
-  .projects h2 {
-    text-align: center;
-    margin-bottom: 2rem;
+    padding: 2rem 0; 
   }
   
   .projects-container {
@@ -243,8 +210,7 @@
   }
   
   .project-item {
-    background-color: red;
-    background: linear-gradient(to bottom, red, purple, rgb(0, 0, 0));
+    /*background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(255, 255, 255));*/
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -261,6 +227,7 @@
   .project-item p {
     flex: 1 0 auto;
     margin-bottom: 1rem;
+    font-size: 0.8rem;
   }
   
   .project-item a {
@@ -272,6 +239,15 @@
   .project-item:hover {
     transform: translateY(-5px);
   }
+
+.link-accent {
+  color: var(--text-color);
+  transition: color 0.1s ease;
+}
+
+.link-accent:hover {
+  color: var(--accent-color);
+}
   
   /* ---------------------- */
   /* 8) Skills & Hobbies    */
@@ -280,11 +256,6 @@
   .skills-hobbies {
     padding: 2rem;
     text-align: center;
-  }
-  
-  .skills-hobbies h2 {
-    margin-bottom: 2rem;
-    font-size: 1.75rem;
   }
   
   .skills,
@@ -311,7 +282,6 @@
   .skills li,
   .hobbies li {
     background-color: var(--secondary-color);
-    color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 16px;
     transition: background-color 0.3s;
@@ -319,52 +289,14 @@
   
   .skills li:hover,
   .hobbies li:hover {
-    background-color: var(--primary-color);
-  }
-  
-  /* ---------------------- */
-  /* 9) Button Styles       */
-  /* ---------------------- */
-  
-  .btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 24px;
-    font-weight: 600;
-    transition: background-color 0.3s;
-  }
-  
-  .btn:hover {
-    background-color: var(--secondary-color);
-  }
-  
-  /* ---------------------- */
-  /* 10) Animations         */
-  /* ---------------------- */
-  
-  /* Example fade-in animation */
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Apply to a class for reveal on load or scroll */
-  .fade-in {
-    animation: fade-in 1s ease-in-out forwards;
+    background-color: var(--accent-color);
   }
 
+  .icon-color {
+    color: var(--accent-color);
+    transition: color 0.3s;
+  }
   
-  /* 
-    Additional creative ideas:
-    - Add a "pulse" animation for hover states on buttons
-    - Use transitions on color, background, or scale for interactive elements
-    - Experiment with multiple background gradients for sections
-    - Implement media queries for responsive design 
+  .icon-color:hover {
+    color: var(--secondary-color);
+  }
