@@ -4,52 +4,22 @@
       <div class="skills">
         <h3>Technical Skills</h3>
         <ul>
-          <li v-for="skill in technicalSkills" :key="skill">{{ skill }}</li>
+          <li v-for="skill in skills_hobbies[0].technicalSkills" :key="skill" class="!text-white"> {{ skill }}
+          </li>
         </ul>
       </div>
       <div class="hobbies">
         <h3>Hobbies</h3>
         <ul>
-          <li v-for="hobby in myHobbies" :key="hobby">{{ hobby }}</li>
+          <li v-for="hobby in skills_hobbies[0].myHobbies" :key="hobby" class="!text-white">
+        {{ hobby }}
+      </li>
         </ul>
       </div>
     </section>
   </template>
-  
-  <script>
-  export default {
-    name: 'SkillsHobbies',
-    data() {
-      return {
-        technicalSkills: [
-          'JavaScript',
-          'Vue.js',
-          'Node.js',
-          'HTML/CSS',
-          'Git/GitHub',
-        ],
-        myHobbies: [
-          'Reading Sci-Fi novels',
-          'Playing guitar',
-          'Photography',
-          'Hiking',
-        ],
-      };
-    },
-  };
+
+  <script setup>
+    import { skills_hobbies } from '../data/skills_hobbies.js';
   </script>
-  
-  <style scoped>
-  .skills-hobbies {
-    padding: 2rem;
-  }
-  
-  .skills, .hobbies {
-    margin-bottom: 2rem;
-  }
-  
-  ul {
-    list-style: disc;
-    margin-left: 1.5rem;
-  }
-  </style>
+
