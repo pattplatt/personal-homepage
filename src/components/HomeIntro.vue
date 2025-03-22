@@ -1,17 +1,16 @@
 <template>
   <section class="home-intro">
-    <div class="intro-text">
-      <img src=".././assets/79_Patrick_Mueller.jpg" alt="Profile" class="profile-pic" />
-      <h1>Hi, I'm Patrick!</h1>
-      <p>
-        I am a software developer with a passion for building interactive web applications.
-        Welcome to my personal site where I showcase my work, skills, and hobbies.
-      </p>
+    <div class="home-intro flex flex-col items-center text-center mt-16">
+      <img :src="homeIntro.imageSrc" class="w-[300px] block mx-auto transition-transform hover:scale-105 filter grayscale hover:grayscale-0 transition duration-500" />
+      <h1 class="!text-[var(--accent-color)]">{{ homeIntro.greeting }}</h1>
+      <p>{{ homeIntro.description }}</p>
     </div>
   </section>
 </template>
 
 <script setup>
+import { homeIntro } from '../data/personal_data.js';
+
 defineOptions({
   name: 'HomeIntro'
 });
