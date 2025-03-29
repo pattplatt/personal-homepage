@@ -1,25 +1,28 @@
 <template>
-    <section class="skills-hobbies">
-      <h2>Skills & Hobbies</h2>
-      <div class="skills">
-        <h3>Technical Skills</h3>
-        <ul>
-          <li v-for="skill in skills_hobbies[0].technicalSkills" :key="skill" class="!text-white"> {{ skill }}
-          </li>
-        </ul>
-      </div>
-      <div class="hobbies">
-        <h3>Hobbies</h3>
-        <ul>
-          <li v-for="hobby in skills_hobbies[0].myHobbies" :key="hobby" class="!text-white">
+  <h2 class="home-intro flex flex-col items-center text-center mt-10">Skills & Hobbies</h2>
+
+  <section class="skills">
+    <h3>Technical Skills</h3>
+    <div v-for="(skills, category) in skills_hobbies.technicalSkills" :key="category">
+      <h4>{{ category }}</h4>
+      <ul>
+        <li v-for="skill in skills" :key="skill" class="text-white">
+          {{ skill }}
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="hobbies">
+    <h3>Hobbies</h3>
+    <ul>
+      <li v-for="hobby in skills_hobbies.hobbies" :key="hobby" class="text-white">
         {{ hobby }}
       </li>
-        </ul>
-      </div>
-    </section>
-  </template>
+    </ul>
+  </section>
+</template>
 
-  <script setup>
-    import { skills_hobbies } from '../data/skills_hobbies.js';
-  </script>
-
+<script setup>
+import { skills_hobbies } from '../data/skills_hobbies.js';
+</script>
