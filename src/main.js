@@ -9,9 +9,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
 import './assets/main.css';
-library.add(faLinkedin, faGithub, faEnvelope)
+library.add(faLinkedin, faGithub, faEnvelope, faDownload)
 const app = createApp(App);
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(router);
