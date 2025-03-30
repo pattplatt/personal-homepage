@@ -71,11 +71,24 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-import { projects } from '../data/projects.js';
 
+const project = ref(null);
 const route = useRoute();
-const project = projects.find(p => p.id === route.params.id);
+
+onMounted(async () => {
+  try {
+    const res = await fetch(import.meta.env.VITE_PROJECTS_URL || '/projects.json');
+    const allProjects = await res.json();
+
+    // Find the project whose ID matches the route param
+    const foundProject = allProjects.find(p => p.id === route.params.id);
+    project.value = foundProject || null;
+  } catch (err) {
+    console.error('Failed to load personal data:', err);
+  }
+});
 
 function openLink(url) {
   window.open(url, '_blank');

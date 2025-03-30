@@ -24,5 +24,16 @@
 </template>
 
 <script setup>
-import { skills_hobbies } from '../data/skills_hobbies.js';
+import { ref, onMounted } from 'vue';
+
+const skills_hobbies = ref({});
+
+onMounted(async () => {
+  try {
+    const res = await fetch(import.meta.env.VITE_SKILLS_HOBBIES_URL || '/skills_hobbies.json');
+    skills_hobbies.value = await res.json();
+  } catch (err) {
+    console.error('Failed to load personal data:', err);
+  }
+});
 </script>
