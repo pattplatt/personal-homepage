@@ -37,6 +37,20 @@ body {
 main {
   flex: 1;
   scroll-margin-top: 72px;
+  padding-top: 72px;
+}
+
+@media (max-width: 640px) {
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .home-intro {
+    text-align: center;
+    margin-top: 10rem !important;
+    align-items: center;
+  }
 }
 
 /* Responsive typography scaling */
@@ -122,6 +136,11 @@ header nav ul {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
+}
+
+header nav {
+  overflow-x: auto; /* optional if items are still squished */
 }
 
 header nav a {
