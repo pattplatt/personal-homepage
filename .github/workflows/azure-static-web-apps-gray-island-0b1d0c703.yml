@@ -47,6 +47,8 @@ jobs:
           ###### End of Repository/Build Configurations ######
         env: 
           VITE_PERSONAL_DATA_URL: ${{ secrets.VITE_PERSONAL_DATA_URL }}
+          VITE_PROJECTS_URL: ${{ secrets.VITE_PROJECTS_URL }}
+          VITE_SKILLS_HOBBIES_URL: ${{ secrets.VITE_SKILLS_HOBBIES_URL }}
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
