@@ -1,5 +1,5 @@
 <template>
-  <h2 class="home-intro flex flex-col items-center text-center mt-10">Skills & Hobbies</h2>
+  <h2 class="items-center text-center mt-10">Skills & Hobbies</h2>
 
   <section class="skills">
     <h3>Technical Skills</h3>

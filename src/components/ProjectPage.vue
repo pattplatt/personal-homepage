@@ -1,6 +1,6 @@
 <template>
   <section v-if="project" class="p-8 max-w-4xl mx-auto">
-    <h1 class="text-4xl font-bold mb-4">{{ project.title }}</h1>
+    <h1 class="text-4xl font-bold mb-4 mt-16">{{ project.title }}</h1>
 
     <div v-if="project.github || project.demo || project.download" class="flex space-x-4 mb-4">
 
@@ -68,11 +68,17 @@
       </div>
   </section>
   <section v-else class="p-8 max-w-4xl mx-auto rounded-lg shadow-md">Project not found.</section>
+
+  <section id="footer">
+      <Footer />
+    </section>
+
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import Footer from './Footer.vue';
 
 const project = ref(null);
 const route = useRoute();

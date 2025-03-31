@@ -1,26 +1,25 @@
 <template>
-
-  <section id="header">
-    <Header />
-  </section>
-
+  <Header />
   <div v-if="$route.path === '/'">
+    <main>
 
-    <section id="home">
-      <HomeIntro />
-    </section>
 
-    <section id="projects">
-      <ProjectsList />
-    </section>
+      <section id="home">
+        <HomeIntro />
+      </section>
 
-    <section id="skills">
-      <SkillsHobbies />
-    </section>
+      <section id="projects">
+        <ProjectsList />
+      </section>
 
-    <section id="contact" class="flex flex-col justify-center items-center py-10 pb-30 space-y-8">
-      <Contact />
-    </section>
+      <section id="skills">
+        <SkillsHobbies />
+      </section>
+
+      <section id="contact" class="flex flex-col justify-center items-center py-10 pb-30 space-y-8">
+        <Contact />
+      </section>
+    </main>
 
     <section id="footer">
       <Footer />
