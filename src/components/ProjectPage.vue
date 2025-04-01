@@ -1,15 +1,12 @@
 <template>
-  <section v-if="project" class="p-8 max-w-4xl mx-auto">
+  <section v-if="project" class="project-page p-8 max-w-4xl mx-auto">
     <h1 class="text-4xl font-bold mb-4 mt-16">{{ project.title }}</h1>
 
     <div v-if="project.github || project.demo || project.download" class="flex space-x-4 mb-4">
 
       <div v-if="project.github" class="space-y-2">
         <div v-for="(url, label) in project.github" :key="label" class="flex items-center space-x-1">
-          <!-- Display the key as a label -->
           <span>{{ label }}</span>
-
-          <!-- Use the value as the link in openLink -->
           <div class="relative group cursor-pointer" @click="openLink(url)">
             <font-awesome-icon :icon="['fab', 'github']" class="text-2xl icon-color" />
             <div

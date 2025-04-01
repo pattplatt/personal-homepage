@@ -51,6 +51,11 @@ main {
     margin-top: 10rem !important;
     align-items: center;
   }
+  .project-page {
+    text-align: center;
+    margin-top: 10rem !important;
+    align-items: center;
+  }
 }
 
 /* Responsive typography scaling */
