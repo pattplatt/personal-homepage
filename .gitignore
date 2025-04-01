@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 *.pdf
 .env
-/public
+/public/*.json
