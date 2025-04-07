@@ -20,6 +20,12 @@
         {{ hobby }}
       </li>
     </ul>
+    <br> <br>
+    <h3>Check out my personal music project here:</h3> 
+
+  <div v-if="skills_hobbies.music" class="flex items-center justify-center mt-5">
+    <iframe :src="skills_hobbies.music" width="60%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
   </section>
 </template>
 
