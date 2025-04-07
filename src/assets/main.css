@@ -41,20 +41,61 @@ main {
 }
 
 @media (max-width: 640px) {
-  header nav ul {
+  .main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  .main-header nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-header nav ul {
+    display: none !important;
+  }
+  .main-header nav ul.open {
+    display: flex !important;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
   .home-intro {
     text-align: center;
-    margin-top: 10rem !important;
+    margin-top: 2rem !important;
     align-items: center;
   }
   .project-page {
     text-align: center;
-    margin-top: 10rem !important;
+    margin-top: 5rem !important;
     align-items: center;
+  }
+}
+
+@media (min-width: 641px) {
+  header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 100rem;
+}
+
+@media (max-width: 640px) {
+  .hamburger {
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -137,15 +178,8 @@ input[type="submit"] {
   width: 100%;
 }
 
-header nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
 header nav {
-  overflow-x: auto; /* optional if items are still squished */
+  overflow-x: auto;
 }
 
 header nav a {
